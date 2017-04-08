@@ -45,32 +45,12 @@ function startGame() {
 			console.log(tileNum1, tileNum2);
 			if (tiles[tileNum1] == tiles[tileNum2]) {
 				openedTiles = [];
-			}/*
-			else if (tiles[tileNum1] == 'images/matu2.jpg' && tiles[tileNum2] == 'images/matu1.jpg') {
-				openedTiles = [];
-			} else if (tiles[tileNum1] == 'images/mark1.jpg' && tiles[tileNum2] == 'images/mark2.jpg' ||
-			tiles[tileNum1] == 'images/mark2.jpg' && tiles[tileNum2] == 'images/mark1.jpg') {
-				openedTiles = [];
-			} else if (tiles[tileNum1] == 'images/margus1.jpg' && tiles[tileNum2] == 'images/margus2.jpg' ||
-			tiles[tileNum1] == 'images/margus2.jpg' && tiles[tileNum2] == 'images/margus1.jpg') {
-				openedTiles = [];
-			} else if (tiles[tileNum1] == 'images/enzo1.jpg' && tiles[tileNum2] == 'images/enzo2.jpg' ||
-			tiles[tileNum1] == 'images/enzo2.jpg' && tiles[tileNum2] == 'images/enzo1.jpg') {
-				openedTiles = [];
-			} else if (tiles[tileNum1] == 'images/kolts1.jpg' && tiles[tileNum2] == 'images/kolts2.jpg' ||
-			tiles[tileNum1] == 'images/kolts2.jpg' && tiles[tileNum2] == 'images/kolts1.jpg') {
-				openedTiles = [];
-			} else if (tiles[tileNum1] == 'images/kask1.jpg' && tiles[tileNum2] == 'images/kask2.jpg' ||
-			tiles[tileNum1] == 'images/kask2.jpg' && tiles[tileNum2] == 'images/kask1.jpg') {
-				openedTiles = [];
-			} else if (tiles[tileNum1] == 'images/martin1.jpg' && tiles[tileNum2] == 'images/martin2.jpg' ||
-			tiles[tileNum1] == 'images/martin2.jpg' && tiles[tileNum2] == 'images/martin1.jpg') {
-				openedTiles = [];
-			} else if (tiles[tileNum1] == 'images/asd.jpg' && tiles[tileNum2] == 'images/asb.jpg' ||
-			tiles[tileNum1] == 'images/asb.jpg' && tiles[tileNum2] == 'images/asd.jpg') {
-				openedTiles = [];
-			}*/ else {
+				var buzzer = $('#buzzer1')[0]; 
+				buzzer.play();
+			} else {
 				// eri pildid
+				var buzzer = $('#buzzer2')[0]; 
+				buzzer.play(); 
 				setTimeout(function() {
 					$('#gameboard .card:eq('+tileNum1+')').css('background-image', '').removeClass('open');
 					$('#gameboard .card:eq('+tileNum2+')').css('background-image', '').removeClass('open');
