@@ -1,0 +1,22 @@
+body {
+	background: #f0f0f0;
+}
+
+#gameboard {
+	width: 424px; /* 106 * 4 = 424*/
+	margin: 0 auto;
+}
+
+.card {
+	background-color: white;
+	background-image: url(../images/card-back.jpg);
+	width: 100px; /* tegelik laius 106px due to 2*margin-ile*/
+	height: 100px;
+	margin: 3px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: 90% 90%;
+	background-position: center;
+	cursor: pointer;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0.2);
+}
