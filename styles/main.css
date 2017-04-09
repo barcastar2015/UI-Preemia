@@ -8,8 +8,9 @@ body {
 }
 
 .card {
+	border-radius: 10px;
 	background-color: white;
-	background-image: url(../images/card-back.jpg);
+	background-image: url(../images/back.png);
 	width: 100px; /* tegelik laius 106px due to 2*margin-ile*/
 	height: 100px;
 	margin: 3px;
