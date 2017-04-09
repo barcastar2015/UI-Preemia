@@ -20,22 +20,24 @@ function startGame() {
 	for (var i = 0; i < logos.length; i++) {
 		tiles.push(logos[i]);
 	}
+
 	tiles = _.shuffle(tiles);
 	// empty gamefield
 	$('#gameboard').empty();
 	for (var i = 0; i < tiles.length; i++) {
-		var tile = '<div class="card"></div>';
+		var tile = '<div id="card-' + i + '" class="card"></div>';
 		$('#gameboard').append(tile);
 	}
 	
 	var openedTiles = [];
-	
+	var openedTileIds = [];
 	$('#gameboard .card').click(function() {
 		var tileNum = $(this).index();
 		if (openedTiles.length >= 2 || $(this).hasClass('open')) {
 			return;
 		}
 		openedTiles.push(tileNum);
+		openedTileIds.push($(this).attr('id'));
 		$(this).addClass('open');
 		$(this).css('background-image', 'url('+tiles[tileNum]+')');
 		if (openedTiles.length == 2) {
@@ -47,6 +49,29 @@ function startGame() {
 				openedTiles = [];
 				var buzzer = $('#buzzer1')[0]; 
 				buzzer.play();
+				$.each(openedTileIds, function(idx, val) {
+					var elem = $('#' + val);
+					if (elem.hasClass('pulse')) {
+						elem.removeClass('animated pulse');
+					}
+					elem.toggleClass('animated tada').delay(1000).promise().done(function() {
+						$(this).removeClass('animated tada');
+					});
+				});
+				openedTileIds = [];
+				var isGameOver = true;
+				for (var i = 0; i < tiles.length; i++) {
+					if (!$('#card-' + i).hasClass('open')) {
+						isGameOver = false;
+					}
+				}
+				if (isGameOver) {
+					console.log('Game over');
+					setTimeout(function() {
+						startGame();
+					}, 3000);
+				}
+				return;
 			} else {
 				// eri pildid
 				var buzzer = $('#buzzer2')[0]; 
@@ -55,9 +80,13 @@ function startGame() {
 					$('#gameboard .card:eq('+tileNum1+')').css('background-image', '').removeClass('open');
 					$('#gameboard .card:eq('+tileNum2+')').css('background-image', '').removeClass('open');
 					openedTiles = [];
+					openedTileIds = [];
 				}, 500);
 			}
-		} 
+		}
+		$(this).toggleClass('animated pulse').delay(1000).promise().done(function() {
+			$(this).removeClass('animated pulse');
+		});
 	});
 }
 
