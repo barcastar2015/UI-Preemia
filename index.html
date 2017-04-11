@@ -1,26 +1,37 @@
 <!doctype html>
 <html>
-	<head>
-	<style>
-		h1, div {
-			text-align: center;
-		}
-	</style>
-		<meta charset="utf8">
-		<title>Memory Game</title>
-		<link rel="stylesheet" href="styles/main.css">
-		<link rel="stylesheet" href="styles/animate.css">		
-		<script src="scripts/jquery-2.1.4.min.js"></script>
-		<script src="scripts/underscore-min.js"></script>
-	</head>
-	<body>
-		<div class="container animated bounceInDown">
-			<h1>Memory</h1>
-			<div>Leia sobivad pildipaarid</div>
-			<div id="gameboard"></div>
-			<script src="scripts/app.js"></script>
-		</div>
-	</body>
-	<audio id="buzzer1" src="suc.wav" type="audio/wav"></audio>
-	<audio id="buzzer2" src="fail.wav" type="audio/wav"></audio>
+<head>
+    <style>
+        h1, div {
+            text-align: center;
+        }
+    </style>
+    <meta charset="utf8">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="scripts/jquery-2.1.4.min.js"></script>
+    <script src="scripts/underscore-min.js"></script>
+</head>
+<body class="background">
+<div class="animated bounceInDown">
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="card margin-top">
+                <div class="card-block">
+                <h4 class="card-title">Memory game</h4>
+                <!--<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>-->
+                <p class="card-text">Find all matching pictures</p>
+                <div id="gameboard"></div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/app.js"></script>
+    </div>
+</div>
+</body>
+<audio id="buzzer1" src="suc.wav" type="audio/wav"></audio>
+<audio id="buzzer2" src="fail.wav" type="audio/wav"></audio>
 </html>

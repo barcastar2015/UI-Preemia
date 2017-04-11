@@ -25,13 +25,13 @@ function startGame() {
 	// empty gamefield
 	$('#gameboard').empty();
 	for (var i = 0; i < tiles.length; i++) {
-		var tile = '<div id="card-' + i + '" class="card"></div>';
+		var tile = '<div id="card-' + i + '" class="custom-card"></div>';
 		$('#gameboard').append(tile);
 	}
 	
 	var openedTiles = [];
 	var openedTileIds = [];
-	$('#gameboard .card').click(function() {
+	$('#gameboard .custom-card').click(function() {
 		var tileNum = $(this).index();
 		if (openedTiles.length >= 2 || $(this).hasClass('open')) {
 			return;
@@ -68,7 +68,14 @@ function startGame() {
 				if (isGameOver) {
 					console.log('Game over');
 					setTimeout(function() {
-						startGame();
+
+                        $(".card").toggleClass('animated rotateOut').delay(1000).promise().done(function() {
+                            $(this).removeClass('animated rotateOut');
+                            startGame();
+                            $(".card").toggleClass('animated rotateIn').delay(1000).promise().done(function() {
+                                $(this).removeClass('animated rotateIn');
+                            });
+                        });
 					}, 3000);
 				}
 				return;
@@ -77,8 +84,8 @@ function startGame() {
 				var buzzer = $('#buzzer2')[0]; 
 				buzzer.play(); 
 				setTimeout(function() {
-					$('#gameboard .card:eq('+tileNum1+')').css('background-image', '').removeClass('open');
-					$('#gameboard .card:eq('+tileNum2+')').css('background-image', '').removeClass('open');
+					$('#gameboard .custom-card:eq('+tileNum1+')').css('background-image', '').removeClass('open');
+					$('#gameboard .custom-card:eq('+tileNum2+')').css('background-image', '').removeClass('open');
 					openedTiles = [];
 					openedTileIds = [];
 				}, 500);

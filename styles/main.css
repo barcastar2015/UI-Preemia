@@ -4,13 +4,21 @@ body {
 
 #gameboard {
 	width: 424px; /* 106 * 4 = 424*/
-	margin: 0 auto;
+	margin: 0;
 }
 
-.card {
+.margin-top {
+	margin-top: 20px;
+}
+
+.background {
+	background-image: url("../images/blue-shadow.png");
+}
+
+.custom-card {
 	border-radius: 10px;
 	background-color: white;
-	background-image: url(../images/back1.png);
+	background-image: url(../images/geometric-blue.jpg);
 	width: 100px; /* tegelik laius 106px due to 2*margin-ile*/
 	height: 100px;
 	margin: 3px;
