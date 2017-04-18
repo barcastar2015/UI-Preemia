@@ -8,11 +8,11 @@ var logos = [
 	'images/psg.jpg',
 	'images/real_madrid.jpg'
 ];
+var turns = 0;
 
 function startGame() {
 	console.log("Starting new game");
 	// add logos to squares 2 times
-	
 	var tiles = [];
 	for (var i = 0; i < logos.length; i++) {
 		tiles.push(logos[i]);
@@ -41,6 +41,7 @@ function startGame() {
 		$(this).addClass('open');
 		$(this).css('background-image', 'url('+tiles[tileNum]+')');
 		if (openedTiles.length == 2) {
+			turns += 1;
 			var tileNum1 = openedTiles[0];
 			var tileNum2 = openedTiles[1];
 			console.log('tiles[tileNum1]: '+tiles[tileNum1]+', tiles[tileNum2]: '+tiles[tileNum2]);
@@ -67,16 +68,7 @@ function startGame() {
 				}
 				if (isGameOver) {
 					console.log('Game over');
-					setTimeout(function() {
-
-                        $(".card").toggleClass('animated rotateOut').delay(1000).promise().done(function() {
-                            $(this).removeClass('animated rotateOut');
-                            startGame();
-                            $(".card").toggleClass('animated rotateIn').delay(1000).promise().done(function() {
-                                $(this).removeClass('animated rotateIn');
-                            });
-                        });
-					}, 3000);
+					victoryScreen();
 				}
 				return;
 			} else {
@@ -95,6 +87,28 @@ function startGame() {
 			$(this).removeClass('animated pulse');
 		});
 	});
+}
+
+function victoryScreen() {
+	var popup = document.getElementById("myPopup");
+	popup.classList.toggle("show");
+	document.getElementById("result").innerHTML = "You did it in " + turns + " turns!";
+	var buzzer = $('#buzzer3')[0]; 
+	buzzer.play();
+}
+
+function restart() {
+	var popup = document.getElementById("myPopup");
+	popup.classList.toggle("show");
+	setTimeout(function() {
+		$(".card").toggleClass('animated rotateOut').delay(1000).promise().done(function() {
+			$(this).removeClass('animated rotateOut');
+			startGame();
+			$(".card").toggleClass('animated rotateIn').delay(1000).promise().done(function() {
+				$(this).removeClass('animated rotateIn');
+			});
+		});
+	}, 1000);
 }
 
 startGame();
