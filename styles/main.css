@@ -1,10 +1,15 @@
 body {
 	background: #f0f0f0;
+	text-align: center;
 }
 
 #gameboard {
 	width: 424px; /* 106 * 4 = 424*/
 	margin: 0;
+}
+
+.container-fluid {
+	margin-bottom: 10px;
 }
 
 .margin-top {
@@ -28,4 +33,52 @@ body {
 	background-position: center;
 	cursor: pointer;
 	box-shadow: 0 5px 10px 0 rgba(0, 0, 0.2);
+}
+
+.congratulations {
+	color: red;
+	font-size: 250%;
+	margin-bottom: 100px;
+	-webkit-animation: flash 1.5s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#again {
+	margin-top: 20px;
+	font-size: 50%;
+	opacity: 0.5;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+	text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 700px;
+	height: 500px;
+    background-color: #00e9ff;
+    color: #000;
+	font-size: 200%;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -350px;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeInDown 1s;
+    animation: fadeInDown 1s;
 }
