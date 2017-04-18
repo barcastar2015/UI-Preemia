@@ -30,8 +30,18 @@
         </div>
         <script src="scripts/app.js"></script>
     </div>
+	<div class="popup">
+	  <div class="popuptext" id="myPopup" onclick="restart();">
+		<b>
+		<div class="congratulations">Congratulations! You won!</div>
+		<div id="result"></div>
+		</b>
+		<div id="again">Click to play again</div>
+	  </div>
+	</div>
 </div>
 </body>
 <audio id="buzzer1" src="suc.wav" type="audio/wav"></audio>
 <audio id="buzzer2" src="fail.wav" type="audio/wav"></audio>
+<audio id="buzzer3" src="victory.wav" type="audio/wav"></audio>
 </html>
