@@ -33,14 +33,48 @@
 	<div class="popup">
 	  <div class="popuptext" id="myPopup" onclick="restart();">
 		<b>
-		<div class="congratulations">Congratulations! You won!</div>
+            <div>
+                <div class="congratulations">Congratulations! You won!</div>
+                <div class="star star-1"></div>
+                <div class="star star-2"></div>
+                <div class="star star-3"></div>
+                <div class="star star-4"></div>
+                <div class="star star-5"></div>
+                <div class="star star-6"></div>
+                <div class="star star-7"></div>
+                <div class="star star-8"></div>
+                <div class="star star-9"></div>
+                <div class="star star-10"></div>
+                <div class="star star-11"></div>
+            </div>
+            <div>
+                <img src="images/trophy.png" width="200" height="200">
+            </div>
 		<div id="result"></div>
 		</b>
 		<div id="again">Click to play again</div>
 	  </div>
 	</div>
+    <div id="screen"></div>
 </div>
 </body>
+<script>
+    $(function () {
+        setInterval(function () {
+            $('.star-1').fadeOut(150).delay(2000).fadeIn(300).fadeOut(150).delay(1254);
+            $('.star-2').fadeOut(300).fadeIn(120).fadeOut(120).delay(1920);
+            $('.star-3').fadeOut(150).delay(1200).fadeIn(300).fadeOut(150).delay(800);
+            $('.star-4').fadeOut(700).fadeIn(300).fadeOut(160).delay(1350);
+            $('.star-5').fadeOut(600).delay(1200).fadeIn(300).fadeOut(160).delay(850);
+            $('.star-6').fadeOut(432).fadeIn(300).fadeOut(160).delay(1350);
+            $('.star-7').fadeOut(523).delay(1200).fadeIn(300).fadeOut(160).delay(950);
+            $('.star-8').fadeOut(200).fadeIn(300).fadeOut(160).delay(1350);
+            $('.star-9').fadeOut(523).delay(600).fadeIn(300).fadeOut(160).delay(850);
+            $('.star-10').fadeOut(200).fadeIn(300).fadeOut(160).delay(1350);
+            $('.star-11').fadeOut(523).delay(800).fadeIn(200).fadeOut(160).delay(750);
+        }, 1);
+    });
+</script>
 <audio id="buzzer1" src="suc.wav" type="audio/wav"></audio>
 <audio id="buzzer2" src="fail.wav" type="audio/wav"></audio>
 <audio id="buzzer3" src="victory.wav" type="audio/wav"></audio>

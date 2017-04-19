@@ -36,11 +36,11 @@ body {
 }
 
 .congratulations {
-	color: red;
-	font-size: 250%;
-	margin-bottom: 100px;
-	-webkit-animation: flash 1.5s;
-	-webkit-animation-iteration-count: infinite;
+	color: white;
+	font-size: 230%;
+	margin: 16px 16px 0px 16px;
+	font-family: verdan, cursive ;
+
 }
 
 #again {
@@ -63,9 +63,9 @@ body {
 .popup .popuptext {
     visibility: hidden;
     width: 700px;
-	height: 500px;
-    background-color: #00e9ff;
-    color: #000;
+	height: 600px;
+    background-color: black;
+    color: white;
 	font-size: 200%;
     text-align: center;
     border-radius: 6px;
@@ -82,3 +82,89 @@ body {
     -webkit-animation: fadeInDown 1s;
     animation: fadeInDown 1s;
 }
+
+.star {
+	position: absolute;
+	background: url(https://dl.dropbox.com/u/1488103/julie-logo-sparkle.png) no-repeat;
+	background-size: contain;
+	overflow: hidden;
+}
+.star-1 {
+	 width: 50px;
+	 height: 34px;
+	 top:110px;
+	 left:97px;
+ }
+.star-2 {
+	 width: 83px;
+	 height: 77px;
+	 top:18px;
+	 left:224px;
+
+ }
+.star-3 {
+	 width: 74px;
+	 height: 70px;
+	 top:115px;
+	 left:172px;
+ }
+.star-4 {
+	 width: 68px;
+	 height: 70px;
+	 top:46px;
+	 left:162px;
+ }
+.star-5 {
+	width: 68px;
+	height: 70px;
+	top:32px;
+	left:578px;
+}
+.star-6 {
+	width: 68px;
+	height: 70px;
+	top:90px;
+	left:459px;
+}
+.star-7 {
+	width: 68px;
+	height: 70px;
+	top:134px;
+	left:423px;
+}
+.star-8 {
+	width: 68px;
+	height: 70px;
+	top:12px;
+	left:300px;
+}
+.star-9 {
+	/*alumine*/
+	width: 68px;
+	height: 70px;
+	top: 370px;
+	left:312px;
+}
+.star-10 {
+	/*ylemine*/
+	width: 68px;
+	height: 70px;
+	top:265px;
+	left:355px;
+}
+.star-11 {
+	/*keskmine*/
+	width: 68px;
+	height: 70px;
+	top:325px;
+	left:300px;
+}
+
+#screen
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #000;
+}
+

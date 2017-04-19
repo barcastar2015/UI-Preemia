@@ -95,9 +95,14 @@ function victoryScreen() {
 	document.getElementById("result").innerHTML = "You did it in " + turns + " turns!";
 	var buzzer = $('#buzzer3')[0]; 
 	buzzer.play();
+    $('#screen').css({ opacity: 0.7, 'width':$(document).width(),'height':$(document).height()});
+    $('body').css({'overflow':'hidden'});
 }
 
 function restart() {
+    $('#screen').css({'display': 'block', opacity: 0.7, 'width':$(document).width(),'height':$(document).height()});
+    $('body').css({'overflow':'hidden'});
+    $('#screen').css('display', 'none')
 	var popup = document.getElementById("myPopup");
 	popup.classList.toggle("show");
 	setTimeout(function() {
